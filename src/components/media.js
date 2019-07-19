@@ -13,7 +13,11 @@ const Media = props => {
           title={props.title}
         />
       ) : (
-        <img src={props.media} className="background-media" alt={props.title} />
+        <img
+          src={props.mediaHD}
+          className="background-media"
+          alt={props.title}
+        />
       )}
     </div>
   );

@@ -8,6 +8,7 @@ import Media from "./components/media";
 function App() {
   const [imageData, setImageData] = useState([]);
   const [media, setMedia] = useState("");
+  const [mediaHD, setMediaHD] = useState("");
   const [title, setTitle] = useState("");
   const [info, setInfo] = useState("");
   const [imgDate, setImgDate] = useState("");
@@ -20,7 +21,8 @@ function App() {
           "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
         );
         // console.log(result.data.hdurl);
-        setMedia(result.data.hdurl);
+        setMediaHD(result.data.hdurl);
+        setMedia(result.data.url);
         setTitle(result.data.title);
         setImgDate(result.data.date);
         setInfo(result.data.explanation);
@@ -59,7 +61,12 @@ function App() {
           height: "100vh"
         }}
       >
-        <Media media={media} mediaType={mediaType} title={title} />
+        <Media
+          media={media}
+          mediaHD={mediaHD}
+          mediaType={mediaType}
+          title={title}
+        />
       </div>
       <Info logo={logo} date={imgDate} title={title} info={info} />
     </div>
