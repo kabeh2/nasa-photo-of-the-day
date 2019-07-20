@@ -1,18 +1,30 @@
 import React from "react";
-import Moment from "react-moment";
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 const Info = props => {
+  //   console.log("Date: " + props.date);
   return (
     <div className="info-container">
       <div className="info-container--content">
         <img className="logo" src={props.logo} alt="Nasa Logo" />
         <div className="info">
-          <h1>NASA Picture of the Day</h1>
+          <h1>NASA {props.mediaType} of the Day</h1>
           <div className="info_title">{props.title}</div>
-          <Moment className="info_date" format="LL">
-            {props.imgDate}
-          </Moment>
-          {/* <div className="info_description">{info}</div> */}
+
+          <DatePicker
+            dateFormat="eeee MMMM d, yyyy"
+            // dateFormat="yyyy-MM-d"
+            selected={props.startDate}
+            onChange={props.handleChange}
+            filterDate={date => {
+              return new Date() > date;
+            }}
+            placeholderText={props.date}
+            className="datePicker"
+            value={props.startDate}
+          />
         </div>
       </div>
     </div>
