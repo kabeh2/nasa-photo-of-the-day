@@ -5,8 +5,10 @@ import logo from "./assets/nasa-logo.png";
 import "./App.scss";
 import Info from "./components/info";
 import Media from "./components/media";
+import CircularIndeterminate from "./components/loader";
 
 function App() {
+  const [loading, setLoading] = useState(false);
   // const [imageData, setImageData] = useState([]);
   const [media, setMedia] = useState("");
   const [mediaHD, setMediaHD] = useState("");
@@ -26,6 +28,7 @@ function App() {
   };
 
   useEffect(() => {
+    setLoading(true);
     const fetchData = async () => {
       try {
         const result = await axios.get("https://api.nasa.gov/planetary/apod", {
@@ -34,6 +37,7 @@ function App() {
             api_key: "n86JVNah2R4q3KSYXeHnpMhvqDX9adH4cRMGrRgR"
           }
         });
+        setLoading(false);
         setMediaHD(result.data.hdurl);
         setMedia(result.data.url);
         setTitle(result.data.title);
@@ -68,12 +72,22 @@ function App() {
           height: "100vh"
         }}
       >
-        <Media
+        {loading ? (
+          <CircularIndeterminate />
+        ) : (
+          <Media
+            media={media}
+            mediaHD={mediaHD}
+            mediaType={mediaType}
+            title={title}
+          />
+        )}
+        {/* <Media
           media={media}
           mediaHD={mediaHD}
           mediaType={mediaType}
           title={title}
-        />
+        /> */}
       </div>
       <Info
         logo={logo}
