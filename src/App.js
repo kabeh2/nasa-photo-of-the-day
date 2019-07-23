@@ -8,6 +8,7 @@ import Media from "./components/media";
 import CircularIndeterminate from "./components/loader";
 
 function App() {
+  // States Below
   const [loading, setLoading] = useState(false);
   // const [imageData, setImageData] = useState([]);
   const [media, setMedia] = useState("");
@@ -20,13 +21,20 @@ function App() {
   const [startDate, setStartDate] = useState(new Date());
   const [newDate, setNewDate] = useState("");
 
+  // States Above
+
   const handleChange = date => {
+    // Formats the returned value from the datepicker so we can
+    // store the value in the appropriate way to link it as query param
+    // to the api link
     const a = moment(date).format("YYYY-MM-DD");
 
+    // State changes returned below
     setStartDate(date);
     setNewDate(a);
   };
 
+  // Use Effect used for life cycles using hooks
   useEffect(() => {
     setLoading(true);
     const fetchData = async () => {
@@ -51,6 +59,9 @@ function App() {
     };
 
     fetchData();
+
+    // newDate used here to stop when retrieved from what I understand of
+    // useEffect hook
   }, [newDate]);
 
   // useEffect(() => {
@@ -82,12 +93,6 @@ function App() {
             title={title}
           />
         )}
-        {/* <Media
-          media={media}
-          mediaHD={mediaHD}
-          mediaType={mediaType}
-          title={title}
-        /> */}
       </div>
       <Info
         logo={logo}

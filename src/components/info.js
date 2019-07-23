@@ -18,6 +18,7 @@ const Info = props => {
             // dateFormat="yyyy-MM-d"
             selected={props.startDate}
             onChange={props.handleChange}
+            // below used to filter/disable all future dates
             filterDate={date => {
               return new Date() > date;
             }}

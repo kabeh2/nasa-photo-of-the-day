@@ -1,7 +1,11 @@
 import React from "react";
 
 const Media = props => {
+  // below used to attach params to embedded youtube video
+  // with autoplay
   const a = `${props.media}?rel=0&amp;autoplay=1&amp;enable_js=1&amp;mute=0`;
+
+  // Below used to switch from image to video render
   return (
     <div>
       {props.mediaType === "image" ? (
