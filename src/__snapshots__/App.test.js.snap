@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component matches the snapshot 1`] = `
+<div
+  className="App"
+>
+  <div
+    style={
+      Object {
+        "height": "100vh",
+        "left": "0",
+        "position": "absolute",
+        "top": "0",
+        "width": "100vw",
+        "zIndex": "1",
+      }
+    }
+  >
+    <div>
+      <iframe
+        allow="autoplay; encrypted-media"
+        allowFullScreen={true}
+        frameBorder="0"
+        name="youtube embed"
+        src="?rel=0&amp;autoplay=1&amp;enable_js=1&amp;mute=0"
+        style={
+          Object {
+            "height": "100%",
+            "left": 0,
+            "position": "absolute",
+            "top": 0,
+            "width": "100%",
+          }
+        }
+        title=""
+        type="text/html"
+      />
+    </div>
+  </div>
+  <div
+    className="info-container"
+  >
+    <div
+      className="info-container--content"
+    >
+      <img
+        alt="Nasa Logo"
+        className="logo"
+        src="nasa-logo.png"
+      />
+      <div
+        className="info"
+      >
+        <h1>
+          NASA 
+          
+           of the Day
+        </h1>
+        <div
+          className="info_title"
+        >
+          
+        </div>
+        <div
+          className="react-datepicker-wrapper"
+        >
+          <div
+            className="react-datepicker__input-container"
+          >
+            <input
+              className="datePicker"
+              disabled={false}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              placeholder=""
+              readOnly={false}
+              type="text"
+              value="Saturday July 27, 2019"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
