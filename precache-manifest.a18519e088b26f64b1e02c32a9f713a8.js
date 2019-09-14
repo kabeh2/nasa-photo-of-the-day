@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0abb8630a8e0efe27fcc21db52033713",
+    "revision": "a930f6cabd566471491b598a2cd4327c",
     "url": "/nasa-photo-of-the-day/index.html"
   },
   {
