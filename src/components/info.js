@@ -25,7 +25,6 @@ const Info = props => {
             placeholderText={props.date}
             className="datePicker"
             value={props.startDate}
-            popperClassName="datePicker-popper"
           />
         </div>
       </div>
