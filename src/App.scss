@@ -210,13 +210,15 @@ h1 {
   border: 2px solid #ec1c24;
 }
 
-.react-datepicker-popper {
-  position: absolute;
-  will-change: transform;
-  top: 0px;
-  left: 0px;
-  transform: none !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, 10%) !important;
+@media (max-width: 580px) {
+  .react-datepicker-popper {
+    position: absolute;
+    will-change: transform;
+    top: 0px;
+    left: 0px;
+    transform: none !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, 10%) !important;
+  }
 }
